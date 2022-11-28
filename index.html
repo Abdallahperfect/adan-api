@@ -8,8 +8,7 @@
     <style>
         body {
             height: 100vh;
-            background: linear-gradient(45deg, #032251, #000);
-
+background-color: #020219;
             color: #fff;
             direction: rtl;
             overflow: hidden;
@@ -21,13 +20,15 @@
 
         .form {
             height: 150px;
-            background-color: rgba(0, 0, 0, 0.5);
+            background: #ffffff1a;
+            backdrop-filter: blur(20px);
+            border: 2px solid #ffffff30;
+            box-shadow: 0 0 30px #0000002a;
             border-radius: 20px;
             padding-top: 50px;
             margin: 130px auto;
             text-align: center;
             width: 100%;
-            box-shadow: 1px 1px 10px #eee;
         }
 
         .selector {
@@ -38,14 +39,11 @@
             font-size: 20px;
             width: 400px;
             max-width: 400px;
-
-
-
         }
 
 
         .option {
-            background-color: #010d1f;
+            background-color: #020219;
             color: #fff;
             border-radius: 10px;
             width: 350px;
@@ -57,15 +55,14 @@
             border-radius: 50%;
             height: 270px;
             z-index: 100;
-            border: 15px solid #010d1f;
+            border: 15px solid #020219;
             width: 270px;
             text-align: center;
             background-image: url(./adan.webp);
             background-position: center;
             background-size: cover;
-        margin-top: -170px;} 
-
-
+            margin-top: -170px;
+        }
     </style>
 </head>
 
@@ -74,6 +71,7 @@
 
 <body>
 
+<h1 style="color:#fff;text-align:center">مواقيت الصلاة</h1>
 
 
     <div style="text-align:center;margin-top: 50px;">
@@ -110,20 +108,20 @@
 
 
 
-        <div style="display: flex;justify-content: space-between;align-items: flex-start;flex-wrap:nowrap;" class="form">
-     
-            <h2 style="color:#fff;padding-right: 20px;">الفجر<br><span  id="fajr"></span></h2>
-            <h2 style="color:#fff;padding-right: 20px;">الشروق<br><span  id="shourouk"></span></h2>
-            <h2 style="color:#fff;padding-right: 20px;">الظهر<br><span  id="dhohr"></span></h2>
-            
-            <div class="image">
-            </div>
-            <h2 style="color:#fff;padding-left: 20px;">العصر<br><span id="asr"></span></h2>
-            <h2 style="color:#fff;padding-left: 20px;">المغرب<br><span id="maghreb"></span></h2>
-            <h2 style="color:#fff;padding-left: 20px;">العشاء<br><span id="esha"></span></h2>
-    
-    
+    <div style="display: flex;justify-content: space-between;align-items: flex-start;flex-wrap:nowrap;" class="form">
+
+        <h2 style="color:#fff;padding-right: 20px;">الفجر<br><span id="fajr"></span></h2>
+        <h2 style="color:#fff;padding-right: 20px;">الشروق<br><span id="shourouk"></span></h2>
+        <h2 style="color:#fff;padding-right: 20px;">الظهر<br><span id="dhohr"></span></h2>
+
+        <div class="image">
         </div>
+        <h2 style="color:#fff;padding-left: 20px;">العصر<br><span id="asr"></span></h2>
+        <h2 style="color:#fff;padding-left: 20px;">المغرب<br><span id="maghreb"></span></h2>
+        <h2 style="color:#fff;padding-left: 20px;">العشاء<br><span id="esha"></span></h2>
+
+
+    </div>
 
 
 
