@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <title>Adan Api</title>
+
+    <style>
+        body {
+            height: 100vh;
+            background: linear-gradient(45deg, #032251, #000);
+
+            color: #fff;
+            direction: rtl;
+            overflow: hidden;
+            margin: 0 10px;
+            padding: 0%;
+            box-sizing: border-box;
+
+        }
+
+        .form {
+            height: 150px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            padding-top: 50px;
+            margin: 130px auto;
+            text-align: center;
+            width: 100%;
+            box-shadow: 1px 1px 10px #eee;
+        }
+
+        .selector {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            width: 400px;
+            max-width: 400px;
+
+
+
+        }
+
+
+        .option {
+            background-color: #010d1f;
+            color: #fff;
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+
+        }
+
+        .image {
+            border-radius: 50%;
+            height: 270px;
+            z-index: 100;
+            border: 15px solid #010d1f;
+            width: 270px;
+            text-align: center;
+            background-image: url(./adan.webp);
+            background-position: center;
+            background-size: cover;
+        margin-top: -170px;} 
+
+
+    </style>
+</head>
+
+
+
+
+<body>
+
+
+
+    <div style="text-align:center;margin-top: 50px;">
+        <select onchange="getch(this.value)" class="selector">
+            <option class="option" value="0">اختر المحافظة</option>
+            <option class="option" value="giza">الجيزة</option>
+            <option class="option" value="cairo	">القاهرة</option>
+            <option class="option" value="alex">الاسكندرية</option>
+            <option class="option" value="Tanta">طنطا</option>
+            <option class="option" value="Sharqia">الشرقية</option>
+            <option class="option" value="Suez">السويس</option>
+            <option class="option" value="Minya">المنيا</option>
+            <option class="option" value="Matruh">مرسى مطروح</option>
+            <option class="option" value="Asyut">أسيوط</option>
+            <option class="option" value="Ismailia">الاسماعيلية</option>
+            <option class="option" value="Luxor">الأقصر</option>
+            <option class="option" value="Beheira">البحيرة</option>
+            <option class="option" value="BeniSuef">بني سويف</option>
+            <option class="option" value="Dakahlia">الدقهلية</option>
+            <option class="option" value="Damietta">دمياط</option>
+            <option class="option" value="Faiyum">الفيوم</option>
+            <option class="option" value="KafrElSheikh">كفر الشيخ</option>
+            <option class="option" value="Monufia">المنوفية</option>
+            <option class="option" value="PortSaid">بور سعيد</option>
+            <option class="option" value="Qalyubia">القليوبية</option>
+        </select>
+
+        <div style="display: flex;justify-content:center;align-items: center;" id="date">
+            <h1 style="color:#fff"></h1>
+        </div>
+
+    </div>
+
+
+
+
+        <div style="display: flex;justify-content: space-between;align-items: flex-start;flex-wrap:nowrap;" class="form">
+     
+            <h2 style="color:#fff;padding-right: 20px;">الفجر<br><span  id="fajr"></span></h2>
+            <h2 style="color:#fff;padding-right: 20px;">الشروق<br><span  id="shourouk"></span></h2>
+            <h2 style="color:#fff;padding-right: 20px;">الظهر<br><span  id="dhohr"></span></h2>
+            
+            <div class="image">
+            </div>
+            <h2 style="color:#fff;padding-left: 20px;">العصر<br><span id="asr"></span></h2>
+            <h2 style="color:#fff;padding-left: 20px;">المغرب<br><span id="maghreb"></span></h2>
+            <h2 style="color:#fff;padding-left: 20px;">العشاء<br><span id="esha"></span></h2>
+    
+    
+        </div>
+
+
+
+    </div>
+
+
+    <script>
+        function getch(e) {
+
+            let date = document.getElementById("date");
+
+
+            let fajr = document.getElementById("fajr");
+            let shourouk = document.getElementById("shourouk");
+            let dhohr = document.getElementById("dhohr");
+            let asr = document.getElementById("asr");
+            let maghreb = document.getElementById("maghreb");
+            let esha = document.getElementById("esha");
+
+
+
+
+            let finalUrl = `https://api.aladhan.com/v1/timingsByCity?city='${e}'&country=egypt`;
+
+            fetch(finalUrl).then((response) => response.json()).then((data) => {
+
+
+
+                date.innerHTML = `<h1> التاريخ الهجري : ${Object.values(data.data.date)[2].date}</h1>`;
+
+                fajr.innerText = `${Object.values(data.data.timings)[0]}`;
+                shourouk.innerText = `${Object.values(data.data.timings)[1]}`;
+                dhohr.innerText = `${Object.values(data.data.timings)[2]}`;
+                asr.innerText = `${Object.values(data.data.timings)[3]}`;
+                maghreb.innerText = `${Object.values(data.data.timings)[4]}`;
+                esha.innerText = `${Object.values(data.data.timings)[6]}`;
+
+
+            })
+        }
+    </script>
+</body>
+
+
+</html>
