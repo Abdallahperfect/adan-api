@@ -17,7 +17,7 @@
 
 .content{
     
-    background-image: url(./mosque.jpg);
+    background-image: url(./mosque.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -76,6 +76,12 @@
            padding-bottom:100px
 
         }
+        #date{
+                color:#fff;
+                text-align:center;
+                margin-top:40px            }
+
+
 
         @media screen and (max-width:650px) {
 
@@ -93,6 +99,9 @@
                 margin-top: 20px;
             }
 
+            .date{
+                font-size: 25px;
+            }
 
         }
 
@@ -132,8 +141,8 @@
             <option class="option" value="Qalyubia">القليوبية</option>
         </select>
 
-        <div id="date" style="color:#fff;text-align:col;margin-top:40px">
-            <h1 style="color:#fff"></h1>
+        <div id="date">
+            <h1></h1>
         </div>
 
       
@@ -170,7 +179,7 @@
 
 
 
-            date.innerHTML = `<h1> التاريخ الهجري : ${Object.values(data.data.date)[2].date}</h1>`;
+            date.innerHTML = `<h1 class="date"> التاريخ الهجري : ${Object.values(data.data.date)[2].date}</h1>`;
 
             fajr.innerText = `${Object.values(data.data.timings)[0]}`;
             shourouk.innerText = `${Object.values(data.data.timings)[1]}`;
