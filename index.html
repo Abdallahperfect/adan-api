@@ -20,11 +20,13 @@
     background-image: url(./mosque.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position:center;
     height: 100vh;
     margin: 0%;
     padding: 0%;
     width: 100%;
+    filter: grayscale(50%);
+
 
 }
 
@@ -64,20 +66,22 @@
         }
 
         
-        .info{
+        .info1,.info2,.info3,.info4,.info5,.info6{
             width:300px;
             height:170px;
             background: linear-gradient(to bottom , rgba(0,0,0,0.5) , transparent);
             margin:10px;
             padding:60px 0px 0px 0px;
-            text-align:center
+            text-align:center;
+            display: none;
         }
 
 
         .details{
            color:#fff;
            padding-right: 20px;
-           padding-bottom:100px
+           padding-bottom:100px;
+           display: none;
 
         }
         #date{
@@ -100,7 +104,7 @@
 
             }
 
-            .info{
+            .info1,.info2,.info3,.info4,.info5,.info6{
                 margin-top: 20px;
             }
 
@@ -153,15 +157,27 @@
       
 <div class="container">
 
-<div class="info"><h2 class="details">الفجر<br><br><span id="fajr"></span></h2></div>
-<div  class="info"> <h2 class="details">الشروق<br><br><span id="shourouk"></span></h2></div>
-<div  class="info"> <h2 class="details">الظهر<br><br><span id="dhohr"></span></h2></div>
-<div  class="info"> <h2 class="details">العصر<br><br><span id="asr"></span></h2></div>
-<div  class="info"> <h2 class="details">المغرب<br><br><span id="maghreb"></span></h2></div>
-<div  class="info"><h2 class="details">العشاء<br><br><span id="esha"></span></h2> </div>
+<div class="info1"><h2 class="details">الفجر<br><br><span id="fajr"></span></h2></div>
+<div  class="info2"> <h2 class="details">الشروق<br><br><span id="shourouk"></span></h2></div>
+<div  class="info3"> <h2 class="details">الظهر<br><br><span id="dhohr"></span></h2></div>
+<div  class="info4"> <h2 class="details">العصر<br><br><span id="asr"></span></h2></div>
+<div  class="info5"> <h2 class="details">المغرب<br><br><span id="maghreb"></span></h2></div>
+<div  class="info6"><h2 class="details">العشاء<br><br><span id="esha"></span></h2> </div>
 </div>
 </div>
 
+<script src="./query.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".info1").delay(100).slideDown(),
+        $(".info2").delay(120).slideDown(),
+        $(".info3").delay(140).slideDown(),
+        $(".info4").delay(160).slideDown(),
+        $(".info5").delay(180).slideDown(),
+        $(".info6").delay(200).slideDown(),
+        $(".details").fadeIn()
+    })
+</script>
 <script>
     function getch(e) {
 
@@ -197,5 +213,7 @@
         })
     }
 </script>
+
+
 </body>
 </html>
